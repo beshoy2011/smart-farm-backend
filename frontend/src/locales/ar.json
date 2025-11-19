@@ -1,0 +1,277 @@
+{
+  "header": {
+    "logo": "SmartFarm AI",
+    "subtitle": "منصة الزراعة الذكية",
+    "nav": {
+      "aiPlantAnalysis": "تحليل النبات بالذكاء الاصطناعي",
+      "smartWaterOptimization": "تحسين المياه الذكي",
+      "soilHealthDetection": "كشف صحة التربة",
+      "fertilizerPestDiagnosis": "تشخيص الأسمدة والآفات",
+      "dashboard": "لوحة تحكم SmartFarm"
+    },
+    "profile": {
+      "myProfile": "الملف الشخصي",
+      "myFarms": "مزارعي",
+      "settings": "الإعدادات",
+      "logout": "تسجيل الخروج"
+    },
+    "menu": "القائمة"
+  },
+  "pages": {
+    "aiPlantAnalysis": {
+      "title": "تحليل النبات بالذكاء الاصطناعي",
+      "description": "حلل نباتاتك باستخدام تقنية الذكاء الاصطناعي المتقدمة"
+    },
+    "smartWaterOptimization": {
+      "title": "تحسين المياه الذكي",
+      "description": "حسّن استخدام المياه لمحاصيلك"
+    },
+    "soilHealthDetection": {
+      "title": "كشف صحة التربة",
+      "description": "راقب وحسّن صحة تربتك"
+    },
+    "fertilizerPestDiagnosis": {
+      "title": "تشخيص الأسمدة والآفات",
+      "description": "شخّص واعالج أمراض النباتات والآفات"
+    },
+    "dashboard": {
+      "title": "لوحة التحكم الذكية",
+      "description": "تحليل شامل ومتابعة ذكية لنباتاتك",
+      "lastUpdated": "آخر تحديث",
+      "emergencyAlerts": "تنبيهات طارئة",
+      "aiSummary": "ملخص التحليل بالذكاء الاصطناعي",
+      "healthProgression": "تطور صحة النبات",
+      "healthProgressionSubtitle": "تطور صحة النبات مع الوقت",
+      "costOptimization": "تحسين التكاليف",
+      "totalSavings": "التوفير الإجمالي",
+      "efficiency": "كفاءة الاستخدام",
+      "waterUsage": "استخدام المياه",
+      "fertilizerUsage": "استخدام السماد",
+      "plantGallery": "معرض النباتات",
+      "images": "صورة",
+      "noImages": "ارفع صور النباتات لبناء لوحة التحكم",
+      "noImagesDesc": "كل تحليل نبات يظهر هنا تلقائياً مع الرسوم البيانية والإحصائيات والتاريخ الكامل.",
+      "stats": {
+        "plantHealth": "صحة النبات",
+        "soilMoisture": "رطوبة التربة",
+        "diseaseProbability": "احتمالية المرض",
+        "fertilizerNeed": "حاجة السماد",
+        "soil": "التربة",
+        "excellent": "ممتاز",
+        "needsCare": "يحتاج عناية",
+        "suitable": "مناسب",
+        "low": "منخفض",
+        "danger": "خطر",
+        "normal": "طبيعية",
+        "high": "عالية",
+        "healthy": "صحي",
+        "warning": "تحذير",
+        "critical": "حرج"
+      },
+      "warnings": {
+        "waterMessage": "نقص شديد في المياه - يحتاج ري فوري",
+        "diseaseMessage": "إصابة محتملة - مراقبة عاجلة مطلوبة",
+        "temperatureMessage": "حرارة أعلى من الحد - يحتاج ظل أو ري إضافي",
+        "fertilizerMessage": "سماد زيادة - خطر على النبات"
+      }
+    }
+  },
+  "plantAnalysis": {
+    "upload": {
+      "title": "رفع صورة النبات",
+      "description": "اسحب وأفلت صورة النبات هنا أو انقر للتصفح",
+      "selectButton": "اختر صورة",
+      "supportedFormats": "يدعم: JPG, PNG, WEBP"
+    },
+    "lastUpdated": "آخر تحليل:",
+    "readyTitle": "جاهز للتحليل",
+    "readyDescription": "ارفع صورة للنبات لتبدأ التحليل المدعوم بالذكاء الاصطناعي",
+    "successTitle": "تم تحديث بيانات المزرعة بنجاح!",
+    "successDescription": "تمت مزامنة كل الصفحات بأحدث تحليل.",
+    "results": {
+      "healthScore": "نقاط الصحة",
+      "disease": "كشف الأمراض",
+      "confidence": "الثقة",
+      "nutrients": "حالة العناصر الغذائية",
+      "growthStage": "مرحلة النمو",
+      "progress": "التقدم",
+      "recommendations": "التوصيات"
+    },
+    "health": {
+      "excellent": "ممتاز",
+      "good": "جيد",
+      "poor": "يحتاج إلى انتباه"
+    },
+    "explainability": {
+      "title": "لماذا هذه النتيجة؟",
+      "confidenceBreakdown": "تفصيل الثقة",
+      "visualIndicators": "المؤشرات البصرية المستخدمة",
+      "heatmapPlaceholder": "خريطة حرارية مولدّة بالذكاء الاصطناعي ستظهر هنا"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "الزراعة الذكية",
+      "titleHighlight": "المدعومة بالذكاء الاصطناعي",
+      "description": "حلل النباتات، وفر المياه، حسّن التربة، وزد الإنتاجية باستخدام تقنية الذكاء الاصطناعي المتقدمة.",
+      "startAnalysis": "ابدأ التحليل",
+      "dashboard": "لوحة التحكم"
+    },
+    "features": {
+      "title": "ميزات قوية",
+      "subtitle": "كل ما تحتاجه للزراعة الذكية",
+      "aiPlantAnalysis": {
+        "title": "تحليل النبات بالذكاء الاصطناعي",
+        "description": "تحليل متقدم برؤية حاسوبية لصحة النبات، كشف الأمراض، وتقديم رؤى فورية."
+      },
+      "waterOptimization": {
+        "title": "تحسين استخدام المياه",
+        "description": "خوارزميات ذكية تحسب جداول الري المثلى لتوفير المياه وتحسين صحة النبات."
+      },
+      "soilHealth": {
+        "title": "كشف صحة التربة",
+        "description": "حلل جودة التربة ومستويات العناصر الغذائية واحصل على توصيات لتحسين المحاصيل."
+      },
+      "fertilizerPest": {
+        "title": "تشخيص الأسمدة والآفات",
+        "description": "حدد نقص العناصر الغذائية ومشاكل الآفات مبكراً مع الكشف المدعوم بالذكاء الاصطناعي."
+      }
+    },
+    "howItWorks": {
+      "title": "كيف يعمل",
+      "subtitle": "خطوات بسيطة لتحسين مزرعتك",
+      "step1": {
+        "title": "رفع صورة النبات",
+        "description": "التقط أو ارفع صورة واضحة لنباتك. سيقوم الذكاء الاصطناعي بتحليلها فوراً."
+      },
+      "step2": {
+        "title": "التحليل بالذكاء الاصطناعي",
+        "description": "خوارزميات متقدمة تحلل احتياجات المياه، جودة التربة، متطلبات الأسمدة، وتكشف الآفات."
+      },
+      "step3": {
+        "title": "احصل على التوصيات",
+        "description": "احصل على رؤى مفصلة، توصيات قابلة للتنفيذ، وتتبع التقدم في لوحة التحكم."
+      }
+    },
+    "weatherStats": {
+      "title": "إحصائيات المزرعة المباشرة",
+      "subtitle": "رؤى فورية لمزرعتك",
+      "currentWeather": "الطقس الحالي",
+      "temperature": "درجة الحرارة",
+      "humidity": "الرطوبة",
+      "waterSaved": "المياه الموفرة",
+      "fertilizerEfficiency": "كفاءة الأسمدة",
+      "plantHealthScore": "نقاط صحة النبات"
+    },
+    "cta": {
+      "title": "ابدأ تحسين مزرعتك اليوم",
+      "description": "انضم إلى آلاف المزارعين الذين يستخدمون الذكاء الاصطناعي لتحسين المحاصيل وتوفير الموارد وزيادة الأرباح.",
+      "startNow": "ابدأ الآن"
+    }
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "personalInfo": "المعلومات الشخصية",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "username": "اسم المستخدم",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "edit": "تعديل الملف الشخصي",
+    "save": "حفظ التغييرات",
+    "cancel": "إلغاء",
+    "profilePicture": "صورة الملف الشخصي",
+    "changePicture": "تغيير الصورة",
+    "accountStats": "إحصائيات الحساب",
+    "joinedDate": "تاريخ الانضمام",
+    "totalAnalyses": "إجمالي التحليلات",
+    "farmsCount": "عدد المزارع"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "appearance": {
+      "title": "المظهر",
+      "theme": "المظهر",
+      "light": "فاتح",
+      "dark": "داكن",
+      "language": "اللغة",
+      "english": "الإنجليزية",
+      "arabic": "العربية"
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "emailNotifications": "إشعارات البريد الإلكتروني",
+      "pushNotifications": "الإشعارات الفورية",
+      "analysisUpdates": "تحديثات التحليل",
+      "weatherAlerts": "تنبيهات الطقس"
+    },
+    "account": {
+      "title": "الحساب",
+      "changePassword": "تغيير كلمة المرور",
+      "deleteAccount": "حذف الحساب",
+      "currentPassword": "كلمة المرور الحالية",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور"
+    },
+    "save": "حفظ الإعدادات",
+    "reset": "إعادة تعيين إلى الافتراضي"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول",
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "noAccount": "ليس لديك حساب؟",
+      "register": "إنشاء حساب",
+      "loggingIn": "جاري تسجيل الدخول...",
+      "loginButton": "تسجيل الدخول"
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "fullName": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "passwordRequirements": "يجب أن تكون كلمة المرور 8 أحرف على الأقل، وتحتوي على حرف كبير واحد ورقم خاص واحد",
+      "passwordMinLength": "8 أحرف على الأقل",
+      "passwordUppercase": "حرف كبير واحد",
+      "passwordSpecialChar": "رقم خاص واحد (!@#$%^&*)",
+      "creatingAccount": "جاري إنشاء الحساب...",
+      "registerButton": "إنشاء حساب",
+      "hasAccount": "لديك حساب بالفعل؟",
+      "login": "تسجيل الدخول"
+    },
+    "forgotPassword": {
+      "title": "نسيت كلمة المرور",
+      "subtitle": "أدخل بريدك الإلكتروني لاستلام رابط إعادة تعيين كلمة المرور",
+      "email": "البريد الإلكتروني",
+      "sendCode": "إرسال رابط إعادة التعيين",
+      "sending": "جاري الإرسال...",
+      "codeSent": "تم إرسال رابط إعادة التعيين إلى بريدك الإلكتروني",
+      "verificationCode": "رمز التحقق",
+      "enterCode": "أدخل الرمز المكون من 6 أرقام المرسل إلى بريدك الإلكتروني",
+      "verify": "التحقق من الرمز",
+      "verifying": "جاري التحقق...",
+      "codeVerified": "تم التحقق من الرمز بنجاح",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "resetting": "جاري إعادة التعيين...",
+      "passwordReset": "تم إعادة تعيين كلمة المرور بنجاح!",
+      "backToLogin": "العودة لتسجيل الدخول"
+    }
+  },
+  "common": {
+    "welcome": "مرحباً",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "logout": "تسجيل الخروج",
+    "currency": " ج.م",
+    "liters": " لتر",
+    "kg": " كجم"
+  }
+}
+

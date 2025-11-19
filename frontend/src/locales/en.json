@@ -1,0 +1,286 @@
+{
+  "header": {
+    "logo": "SmartFarm AI",
+    "subtitle": "Smart Farming Platform",
+    "nav": {
+      "aiPlantAnalysis": "AI Plant Analysis",
+      "smartWaterOptimization": "Smart Water Optimization",
+      "soilHealthDetection": "Soil Health Detection",
+      "fertilizerPestDiagnosis": "Fertilizer & Pest Diagnosis",
+      "dashboard": "SmartFarm Dashboard"
+    },
+    "profile": {
+      "myProfile": "My Profile",
+      "myFarms": "My Farms",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "menu": "Menu"
+  },
+  "pages": {
+    "aiPlantAnalysis": {
+      "title": "AI Plant Analysis",
+      "description": "Analyze your plants with advanced AI technology"
+    },
+    "smartWaterOptimization": {
+      "title": "Smart Water Optimization",
+      "description": "Optimize water usage for your crops"
+    },
+    "soilHealthDetection": {
+      "title": "Soil Health Detection",
+      "description": "Monitor and improve your soil health"
+    },
+    "fertilizerPestDiagnosis": {
+      "title": "Fertilizer & Pest Diagnosis",
+      "description": "Diagnose and treat plant diseases and pests"
+    },
+    "dashboard": {
+      "title": "Smart Control Panel",
+      "description": "Comprehensive analysis and smart monitoring of your plants",
+      "lastUpdated": "Last updated",
+      "emergencyAlerts": "Emergency Alerts",
+      "aiSummary": "AI Analysis Summary",
+      "healthProgression": "Plant Health Evolution",
+      "healthProgressionSubtitle": "Plant health evolution over time",
+      "costOptimization": "Cost Optimization",
+      "totalSavings": "Total Savings",
+      "efficiency": "Usage Efficiency",
+      "waterUsage": "Water Usage",
+      "fertilizerUsage": "Fertilizer Usage",
+      "plantGallery": "Plant Gallery",
+      "images": "images",
+      "noImages": "Upload plant images to build your dashboard",
+      "noImagesDesc": "Every plant analysis automatically appears here with charts, statistics, and full history.",
+      "stats": {
+        "plantHealth": "Plant Health",
+        "soilMoisture": "Soil Moisture",
+        "diseaseProbability": "Disease Probability",
+        "fertilizerNeed": "Fertilizer Need",
+        "soil": "Soil",
+        "excellent": "Excellent",
+        "needsCare": "Needs Care",
+        "suitable": "Suitable",
+        "low": "Low",
+        "danger": "Danger",
+        "normal": "Normal",
+        "high": "High",
+        "healthy": "Healthy",
+        "warning": "Warning",
+        "critical": "Critical"
+      },
+      "warnings": {
+        "waterMessage": "Severe water shortage - immediate irrigation needed",
+        "diseaseMessage": "Potential infection - urgent monitoring required",
+        "temperatureMessage": "Temperature above limit - needs shade or additional irrigation",
+        "fertilizerMessage": "Fertilizer overdose - danger to plant"
+      }
+    }
+  },
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "currency": " EGP",
+    "liters": " L",
+    "kg": " kg"
+  },
+  "plantAnalysis": {
+    "upload": {
+      "title": "Upload Plant Image",
+      "description": "Drag and drop your plant image here or click to browse",
+      "selectButton": "Select Image",
+      "supportedFormats": "Supports: JPG, PNG, WEBP"
+    },
+    "lastUpdated": "Last analysis:",
+    "readyTitle": "Ready to Analyze",
+    "readyDescription": "Upload a plant image to get started with AI-powered analysis",
+    "successTitle": "Farm data updated successfully!",
+    "successDescription": "All pages are now synced with the latest analysis.",
+    "results": {
+      "healthScore": "Health Score",
+      "disease": "Disease Detection",
+      "confidence": "Confidence",
+      "nutrients": "Nutrient Status",
+      "growthStage": "Growth Stage",
+      "progress": "Progress",
+      "recommendations": "Recommendations"
+    },
+    "health": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "poor": "Needs Attention"
+    },
+    "explainability": {
+      "title": "Why this result?",
+      "confidenceBreakdown": "Confidence Breakdown",
+      "visualIndicators": "Visual Indicators Used",
+      "heatmapPlaceholder": "AI-generated heatmap visualization will appear here"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "AI-Powered",
+      "titleHighlight": "Smart Farming",
+      "description": "Analyze plants, save water, improve soil, and boost productivity with cutting-edge AI technology.",
+      "startAnalysis": "Start Analysis",
+      "dashboard": "Dashboard"
+    },
+    "features": {
+      "title": "Powerful Features",
+      "subtitle": "Everything you need for smart farming",
+      "aiPlantAnalysis": {
+        "title": "AI Plant Analysis",
+        "description": "Advanced computer vision analyzes plant health, detects diseases, and provides instant insights."
+      },
+      "waterOptimization": {
+        "title": "Water Optimization",
+        "description": "Smart algorithms calculate optimal watering schedules to save water and improve plant health."
+      },
+      "soilHealth": {
+        "title": "Soil Health Detection",
+        "description": "Analyze soil quality, nutrient levels, and get recommendations for better crop yields."
+      },
+      "fertilizerPest": {
+        "title": "Fertilizer & Pest Diagnosis",
+        "description": "Identify nutrient deficiencies and pest problems early with AI-powered detection."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Simple steps to optimize your farm",
+      "step1": {
+        "title": "Upload Plant Photo",
+        "description": "Take or upload a clear photo of your plant. Our AI will analyze it instantly."
+      },
+      "step2": {
+        "title": "AI Analysis",
+        "description": "Advanced algorithms analyze water needs, soil quality, fertilizer requirements, and detect pests."
+      },
+      "step3": {
+        "title": "Get Recommendations",
+        "description": "Receive detailed insights, actionable recommendations, and track progress on your dashboard."
+      }
+    },
+    "weatherStats": {
+      "title": "Live Farm Statistics",
+      "subtitle": "Real-time insights for your farm",
+      "currentWeather": "Current Weather",
+      "temperature": "Temperature",
+      "humidity": "Humidity",
+      "waterSaved": "Water Saved",
+      "fertilizerEfficiency": "Fertilizer Efficiency",
+      "plantHealthScore": "Plant Health Score"
+    },
+    "cta": {
+      "title": "Start Optimizing Your Farm Today",
+      "description": "Join thousands of farmers using AI to improve crop yields, save resources, and maximize profits.",
+      "startNow": "Start Now"
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "personalInfo": "Personal Information",
+    "fullName": "Full Name",
+    "email": "Email",
+    "username": "Username",
+    "phone": "Phone Number",
+    "address": "Address",
+    "edit": "Edit Profile",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "profilePicture": "Profile Picture",
+    "changePicture": "Change Picture",
+    "accountStats": "Account Statistics",
+    "joinedDate": "Joined Date",
+    "totalAnalyses": "Total Analyses",
+    "farmsCount": "Farms Count"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": {
+      "title": "Appearance",
+      "theme": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "language": "Language",
+      "english": "English",
+      "arabic": "Arabic"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "emailNotifications": "Email Notifications",
+      "pushNotifications": "Push Notifications",
+      "analysisUpdates": "Analysis Updates",
+      "weatherAlerts": "Weather Alerts"
+    },
+    "account": {
+      "title": "Account",
+      "changePassword": "Change Password",
+      "deleteAccount": "Delete Account",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "save": "Save Settings",
+    "reset": "Reset to Default"
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "username": "Username",
+      "password": "Password",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "register": "Register",
+      "loggingIn": "Logging in...",
+      "loginButton": "Login"
+    },
+    "register": {
+      "title": "Create Account",
+      "fullName": "Full Name",
+      "email": "Email",
+      "username": "Username",
+      "password": "Password",
+      "passwordRequirements": "Password must be at least 8 characters, include one uppercase letter, and one special character",
+      "passwordMinLength": "At least 8 characters",
+      "passwordUppercase": "One uppercase letter",
+      "passwordSpecialChar": "One special character (!@#$%^&*)",
+      "creatingAccount": "Creating account...",
+      "registerButton": "Register",
+      "hasAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "forgotPassword": {
+      "title": "Forgot Password",
+      "subtitle": "Enter your email to receive a password reset link",
+      "email": "Email Address",
+      "sendCode": "Send Reset Link",
+      "sending": "Sending...",
+      "codeSent": "Reset link sent to your email",
+      "verificationCode": "Verification Code",
+      "enterCode": "Enter the 6-digit code sent to your email",
+      "verify": "Verify Code",
+      "verifying": "Verifying...",
+      "codeVerified": "Code verified successfully",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "resetPassword": "Reset Password",
+      "resetting": "Resetting...",
+      "passwordReset": "Password reset successfully!",
+      "backToLogin": "Back to Login"
+    }
+  },
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "logout": "Logout",
+    "currency": " EGP",
+    "liters": " L",
+    "kg": " kg"
+  }
+}
+
