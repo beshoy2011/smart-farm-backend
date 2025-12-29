@@ -6,6 +6,7 @@ const useAuthStore = create((set) => ({
   user: null,
   token: null,
   isAuthenticated: false,
+  isLoading: true, // Add loading state
 
   login: async (username, password) => {
     try {
@@ -163,21 +164,37 @@ const useAuthStore = create((set) => ({
   init: () => {
     const token = localStorage.getItem('auth_token')
     if (token) {
-      set({ token, isAuthenticated: true })
-      // Optionally fetch user info
+      set({ token, isAuthenticated: true, isLoading: true })
+      // Fetch user info in background (non-blocking with timeout)
+      const timeoutId = setTimeout(() => {
+        set({ isLoading: false })
+      }, 3000) // Max 3 seconds wait
+      
       api.get('/auth/me', {
         headers: { Authorization: `Bearer ${token}` },
+        timeout: 3000 // 3 second timeout
       }).then(response => {
+        clearTimeout(timeoutId)
         const user = response.data
-        set({ user })
-        localStorage.setItem('current_user_id', user.id.toString())
-        setCurrentUserId(user.id)
-      }).catch(() => {
-        localStorage.removeItem('auth_token')
-        localStorage.removeItem('current_user_id')
-        setCurrentUserId(null)
-        set({ token: null, isAuthenticated: false })
+        set({ user, isLoading: false })
+        if (user?.id) {
+          localStorage.setItem('current_user_id', user.id.toString())
+          setCurrentUserId(user.id)
+        }
+      }).catch((error) => {
+        clearTimeout(timeoutId)
+        set({ isLoading: false })
+        // Only clear token if it's a 401 (unauthorized)
+        if (error.response?.status === 401) {
+          localStorage.removeItem('auth_token')
+          localStorage.removeItem('current_user_id')
+          setCurrentUserId(null)
+          set({ token: null, isAuthenticated: false })
+        }
+        // If backend is down, keep token for when it comes back
       })
+    } else {
+      set({ isLoading: false })
     }
   }
 }))

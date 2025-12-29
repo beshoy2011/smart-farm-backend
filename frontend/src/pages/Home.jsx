@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import IntroAnimation from '../components/IntroAnimation'
 import HomeHero from '../components/home/HomeHero'
@@ -9,14 +9,26 @@ import CTASection from '../components/home/CTASection'
 
 export default function Home() {
   const [introComplete, setIntroComplete] = useState(false)
+  // Skip intro animation if user wants to see content immediately
+  const [skipIntro, setSkipIntro] = useState(false)
+
+  // Auto-skip intro after 1 second if user clicks
+  useEffect(() => {
+    const handleClick = () => {
+      setSkipIntro(true)
+      setIntroComplete(true)
+    }
+    window.addEventListener('click', handleClick, { once: true })
+    return () => window.removeEventListener('click', handleClick)
+  }, [])
 
   return (
     <>
-      {!introComplete && (
+      {!introComplete && !skipIntro && (
         <IntroAnimation onComplete={() => setIntroComplete(true)} />
       )}
       
-      {introComplete && (
+      {(introComplete || skipIntro) && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

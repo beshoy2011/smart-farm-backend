@@ -22,8 +22,10 @@ class User(Base):
     reset_token = Column(String, nullable=True)
     reset_token_expires = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    fcm_token = Column(String, nullable=True)  # For push notifications
 
     analyses = relationship("Analysis", back_populates="owner")
+    achievements = relationship("Achievement", back_populates="user")
 
 
 class Analysis(Base):
@@ -160,5 +162,71 @@ class WeeklyRecommendation(Base):
     week_start_date = Column(DateTime(timezone=True), nullable=False)
     recommendations = Column(JSON, nullable=True)
     plant_ids = Column(JSON, nullable=True)  # List of analysis IDs
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class Achievement(Base):
+    __tablename__ = "achievements"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    achievement_type = Column(String, nullable=False)  # 'first_analysis', 'water_saver', etc.
+    title = Column(String, nullable=True)
+    description = Column(String, nullable=True)
+    icon = Column(String, nullable=True)  # Emoji or icon name
+    unlocked_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    user = relationship("User", back_populates="achievements")
+
+
+class TimeLapseProject(Base):
+    __tablename__ = "timelapse_projects"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    plant_name = Column(String, nullable=False)
+    description = Column(Text, nullable=True)
+    start_date = Column(DateTime(timezone=True), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class TimeLapseImage(Base):
+    __tablename__ = "timelapse_images"
+
+    id = Column(Integer, primary_key=True, index=True)
+    project_id = Column(Integer, ForeignKey("timelapse_projects.id"))
+    analysis_id = Column(Integer, ForeignKey("analyses.id"), nullable=True)
+    image_data = Column(Text, nullable=True)  # Base64 encoded or URL
+    captured_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class IrrigationSchedule(Base):
+    __tablename__ = "irrigation_schedules"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    analysis_id = Column(Integer, ForeignKey("analyses.id"))
+    scheduled_time = Column(DateTime(timezone=True), nullable=False)
+    duration_minutes = Column(Integer, nullable=False)
+    status = Column(String, default="scheduled")  # scheduled, executing, completed, cancelled
+    started_at = Column(DateTime(timezone=True), nullable=True)
+    completed_at = Column(DateTime(timezone=True), nullable=True)
+    water_used_liters = Column(Float, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class AgriculturalTask(Base):
+    __tablename__ = "agricultural_tasks"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"))
+    title = Column(String, nullable=False)
+    description = Column(Text, nullable=True)
+    due_date = Column(DateTime(timezone=True), nullable=True)
+    priority = Column(String, default="medium")  # low, medium, high, urgent
+    task_type = Column(String, default="general")  # watering, fertilizing, pruning, etc.
+    related_analysis_id = Column(Integer, ForeignKey("analyses.id"), nullable=True)
+    status = Column(String, default="pending")  # pending, in_progress, completed, cancelled
+    completed_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 

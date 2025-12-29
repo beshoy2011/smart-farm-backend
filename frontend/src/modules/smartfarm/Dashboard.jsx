@@ -15,6 +15,8 @@ import {
   LineChart,
   AlertCircle,
   CheckCircle2,
+  Wifi,
+  WifiOff,
 } from 'lucide-react'
 import {
   Chart as ChartJS,
@@ -31,6 +33,7 @@ import {
 import { Line, Bar } from 'react-chartjs-2'
 import { useAnalysisFeed } from './DataStore'
 import { useLanguage } from '../../context/LanguageContext'
+import { useWebSocket } from '../../hooks/useWebSocket'
 import api from '../../services/api'
 
 ChartJS.register(
@@ -56,8 +59,26 @@ const formatNumber = (value, unit = '') => {
 export default function DashboardPage() {
   const { t, language } = useLanguage()
   const { results, latest } = useAnalysisFeed()
+  const { data: wsData, isConnected } = useWebSocket()
   const [costData, setCostData] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [newAchievements, setNewAchievements] = useState([])
+
+  // Handle WebSocket data (non-blocking)
+  useEffect(() => {
+    if (wsData && wsData.type === 'achievement_unlocked') {
+      try {
+        setNewAchievements(prev => {
+          // Prevent duplicates
+          const exists = prev.some(a => a.type === wsData.achievement?.type)
+          if (exists) return prev
+          return [...prev, wsData.achievement]
+        })
+      } catch (error) {
+        console.error('Error handling WebSocket achievement:', error)
+      }
+    }
+  }, [wsData])
 
   useEffect(() => {
     // Fetch cost optimization data
@@ -184,14 +205,38 @@ export default function DashboardPage() {
                 </p>
               </div>
             </div>
-            {latest && (
-              <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/20 rounded-full">
-                <RefreshCw size={16} className="text-indigo-600 dark:text-indigo-400" />
-                <p className="text-sm text-indigo-600 dark:text-indigo-400">
-                  {t('pages.dashboard.lastUpdated')}: {new Date(latest.timestamp).toLocaleString()}
-                </p>
+            <div className="flex items-center gap-3">
+              {latest && (
+                <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/20 rounded-full">
+                  <RefreshCw size={16} className="text-indigo-600 dark:text-indigo-400" />
+                  <p className="text-sm text-indigo-600 dark:text-indigo-400">
+                    {t('pages.dashboard.lastUpdated')}: {new Date(latest.timestamp).toLocaleString()}
+                  </p>
+                </div>
+              )}
+              {/* WebSocket Status */}
+              <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${
+                isConnected 
+                  ? 'bg-green-50 dark:bg-green-900/20' 
+                  : 'bg-gray-50 dark:bg-gray-800'
+              }`}>
+                {isConnected ? (
+                  <>
+                    <Wifi size={16} className="text-green-600 dark:text-green-400" />
+                    <p className="text-sm text-green-600 dark:text-green-400">
+                      🔴 متصل - تحديثات فورية
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <WifiOff size={16} className="text-gray-500" />
+                    <p className="text-sm text-gray-500">
+                      غير متصل
+                    </p>
+                  </>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </motion.div>
 

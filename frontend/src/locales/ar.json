@@ -7,7 +7,9 @@
       "smartWaterOptimization": "تحسين المياه الذكي",
       "soilHealthDetection": "كشف صحة التربة",
       "fertilizerPestDiagnosis": "تشخيص الأسمدة والآفات",
-      "dashboard": "لوحة تحكم SmartFarm"
+      "dashboard": "لوحة تحكم SmartFarm",
+      "achievements": "الإنجازات",
+      "chatbot": "المساعد الذكي"
     },
     "profile": {
       "myProfile": "الملف الشخصي",
@@ -271,7 +273,79 @@
     "logout": "تسجيل الخروج",
     "currency": " ج.م",
     "liters": " لتر",
-    "kg": " كجم"
+    "kg": " كجم",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "view": "عرض",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "confirm": "تأكيد",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "chatbot": {
+    "title": "المساعد الذكي في الزراعة",
+    "subtitle": "AI Agricultural Assistant",
+    "placeholder": "اسأل عن الري، الأسمدة، الأمراض...",
+    "send": "إرسال",
+    "sending": "جاري الإرسال...",
+    "welcome": "🌱 مرحباً! أنا مساعدك الذكي في الزراعة. يمكنني مساعدتك في الري، الأسمدة، الأمراض، الآفات، والتربة. اسألني أي شيء!",
+    "error": "عذراً، حدث خطأ. يرجى المحاولة مرة أخرى.",
+    "clearHistory": "مسح التاريخ",
+    "history": "تاريخ المحادثات",
+    "noHistory": "لا يوجد تاريخ محادثات"
+  },
+  "features": {
+    "timelapse": {
+      "title": "تتبع النمو",
+      "createProject": "إنشاء مشروع",
+      "addImage": "إضافة صورة",
+      "viewProgress": "عرض التقدم",
+      "generateVideo": "إنشاء فيديو"
+    },
+    "irrigation": {
+      "title": "الري التلقائي",
+      "checkNeeds": "فحص الاحتياجات",
+      "schedule": "جدولة",
+      "history": "التاريخ",
+      "stats": "الإحصائيات"
+    },
+    "analytics": {
+      "title": "التحليلات المتقدمة",
+      "comprehensive": "إحصائيات شاملة",
+      "comparison": "المقارنة",
+      "predictions": "التنبؤات"
+    },
+    "tasks": {
+      "title": "المهام الزراعية",
+      "create": "إنشاء مهمة",
+      "list": "قائمة المهام",
+      "today": "مهام اليوم",
+      "overdue": "المتأخرة"
+    }
+  },
+  "achievements": {
+    "title": "الإنجازات والشارات",
+    "subtitle": "تتبع إنجازاتك وشاراتك في SmartFarm AI",
+    "unlocked": "الإنجازات المفتوحة",
+    "total": "الإجمالي",
+    "progress": "التقدم",
+    "checkNew": "فحص الإنجازات الجديدة",
+    "allAchievements": "جميع الإنجازات",
+    "noAchievements": "لا توجد إنجازات بعد",
+    "noAchievementsDesc": "ابدأ بتحليل نباتاتك لفتح الإنجازات!",
+    "congratulations": "مبروك! إنجاز جديد",
+    "newAchievement": "مبروك! فتحت {count} إنجاز جديد!",
+    "unlockedAt": "تم الفتح"
   }
 }
 

@@ -9,6 +9,7 @@ import requests
 import os
 from app.database import get_db
 from app import models, schemas, auth
+from app.services.weather_prediction_service import weather_prediction_service
 
 router = APIRouter()
 
@@ -132,6 +133,54 @@ async def get_weather_recommendations(
         "weather": weather,
         "recommendations": recommendations
     }
+
+
+@router.get("/forecast")
+async def get_weather_forecast(
+    location: str = "Cairo,EG",
+    days: int = 7,
+    current_user: models.User = Depends(auth.get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Get weather forecast for next N days"""
+    try:
+        forecast = weather_prediction_service.predict_weather(location, days)
+        alerts = weather_prediction_service.get_agricultural_alerts(forecast)
+        
+        return {
+            "forecast": forecast,
+            "alerts": alerts,
+            "summary": {
+                "total_alerts": len(alerts),
+                "high_priority": len([a for a in alerts if a.get("severity") == "high"])
+            }
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Forecast error: {str(e)}"
+        )
+
+
+@router.get("/irrigation-recommendation")
+async def get_irrigation_recommendation(
+    location: str = "Cairo,EG",
+    soil_moisture: float = 50,
+    current_user: models.User = Depends(auth.get_current_user),
+    db: Session = Depends(get_db)
+):
+    """Get smart irrigation recommendation based on weather"""
+    try:
+        forecast = weather_prediction_service.predict_weather(location, 3)
+        recommendation = weather_prediction_service.get_irrigation_recommendation(
+            forecast, soil_moisture
+        )
+        return recommendation
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Recommendation error: {str(e)}"
+        )
 
 
 def _get_mock_weather(location: str, db: Session) -> models.WeatherData:

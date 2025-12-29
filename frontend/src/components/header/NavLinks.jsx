@@ -3,7 +3,9 @@ import {
   Droplets, 
   Sprout, 
   Bug, 
-  BarChart3 
+  BarChart3,
+  Trophy,
+  MessageCircle
 } from 'lucide-react'
 import NavItem from './NavItem'
 
@@ -37,6 +39,18 @@ const navItems = [
     translationKey: 'header.nav.dashboard',
     icon: BarChart3,
     gradient: 'from-indigo-500 to-purple-500'
+  },
+  {
+    path: '/achievements',
+    translationKey: 'header.nav.achievements',
+    icon: Trophy,
+    gradient: 'from-yellow-500 to-orange-500'
+  },
+  {
+    path: '/chatbot',
+    translationKey: 'header.nav.chatbot',
+    icon: MessageCircle,
+    gradient: 'from-green-500 to-teal-500'
   }
 ]
 

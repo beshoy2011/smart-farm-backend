@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from app.database import engine, Base
-from app.routers import auth, analysis, dashboard, reports, weather
+from app.routers import auth, analysis, dashboard, reports, weather, websocket, achievements, notifications, chatbot, plant_comparison, weekly_recommendations, timelapse, smart_irrigation, analytics, daily_recommendations, tasks
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -37,7 +37,7 @@ else:
     # In development, allow common localhost ports
     allowed_origins = [
         "http://localhost:3000",
-        "http://localhost:3000",  # Frontend port
+        "http://localhost:5173",  # Vite default port
         "http://localhost:80",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
@@ -64,6 +64,17 @@ app.include_router(analysis.router, prefix="/api/analysis", tags=["Analysis"])
 app.include_router(dashboard.router, prefix="/api/dashboard", tags=["Dashboard"])
 app.include_router(reports.router, prefix="/api/reports", tags=["Reports"])
 app.include_router(weather.router, prefix="/api/weather", tags=["Weather"])
+app.include_router(websocket.router, tags=["WebSocket"])
+app.include_router(achievements.router, prefix="/api/achievements", tags=["Achievements"])
+app.include_router(notifications.router, prefix="/api/notifications", tags=["Notifications"])
+app.include_router(chatbot.router, prefix="/api/chatbot", tags=["Chatbot"])
+app.include_router(plant_comparison.router, prefix="/api/plant-comparison", tags=["Plant Comparison"])
+app.include_router(weekly_recommendations.router, prefix="/api/weekly-recommendations", tags=["Weekly Recommendations"])
+app.include_router(timelapse.router, prefix="/api/timelapse", tags=["Time-lapse"])
+app.include_router(smart_irrigation.router, prefix="/api/irrigation", tags=["Smart Irrigation"])
+app.include_router(analytics.router, prefix="/api/analytics", tags=["Advanced Analytics"])
+app.include_router(daily_recommendations.router, prefix="/api/daily-recommendations", tags=["Daily Recommendations"])
+app.include_router(tasks.router, prefix="/api/tasks", tags=["Task Management"])
 
 
 @app.get("/")

@@ -116,6 +116,42 @@ async def analyze_image(
         db.add(db_analysis)
         db.commit()
         db.refresh(db_analysis)
+        
+        # Check and unlock achievements (non-blocking)
+        try:
+            from app.services.achievement_service import AchievementService
+            
+            achievement_service = AchievementService()
+            newly_unlocked = achievement_service.check_and_unlock_achievements(
+                current_user.id, db
+            )
+            
+            # Send email notifications for achievements (non-blocking)
+            if newly_unlocked:
+                try:
+                    from app.services.email_service import EmailService
+                    email_service = EmailService()
+                    for achievement in newly_unlocked:
+                        if current_user.email:
+                            email_service.send_achievement_email(
+                                current_user.email,
+                                current_user.full_name or current_user.username,
+                                achievement
+                            )
+                except Exception as email_error:
+                    print(f"Email notification error: {email_error}")
+            
+            # Broadcast via WebSocket (non-blocking, don't await to avoid blocking)
+            # Note: WebSocket broadcasting is handled separately, not blocking the response
+            if newly_unlocked:
+                try:
+                    # Just log - WebSocket will handle broadcasting when connected
+                    print(f"New achievements unlocked for user {current_user.id}: {len(newly_unlocked)}")
+                except Exception as ws_error:
+                    print(f"WebSocket broadcast error: {ws_error}")
+        except Exception as e:
+            print(f"Error in achievement system: {e}")
+            # Don't fail the analysis if achievement system fails
 
         response_payload = {
             "analysis_id": db_analysis.id,

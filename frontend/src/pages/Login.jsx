@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useGoogleLogin } from '@react-oauth/google'
 import { useAuthStore } from '../store/authStore'
@@ -12,13 +12,23 @@ export default function Login() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const { login, loginWithGoogle } = useAuthStore()
+  const { login, loginWithGoogle, isAuthenticated } = useAuthStore()
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated || localStorage.getItem('auth_token')) {
+      navigate('/', { replace: true })
+    }
+  }, [isAuthenticated, navigate])
 
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       const result = await loginWithGoogle(tokenResponse.access_token)
       if (result.success) {
-        navigate('/')
+        // Navigate after state updates
+        setTimeout(() => {
+          navigate('/', { replace: true })
+        }, 200)
       } else {
         setError(result.error || 'Google login failed')
       }
@@ -42,7 +52,10 @@ export default function Login() {
     setLoading(false)
     
     if (result.success) {
-      navigate('/')
+      // Navigate after state updates
+      setTimeout(() => {
+        navigate('/', { replace: true })
+      }, 200)
     } else {
       setError(result.error || 'Login failed')
     }

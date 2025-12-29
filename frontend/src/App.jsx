@@ -19,10 +19,30 @@ import Register from './pages/Register'
 import ForgotPassword from './pages/ForgotPassword'
 import PlantComparison from './pages/PlantComparison'
 import WeeklyRecommendations from './pages/WeeklyRecommendations'
+import Achievements from './pages/Achievements'
+import Chatbot from './pages/Chatbot'
 
 function PrivateRoute({ children }) {
-  const { isAuthenticated } = useAuthStore()
-  return isAuthenticated ? children : <Navigate to="/login" />
+  const { isAuthenticated, token, isLoading } = useAuthStore()
+  // Check token in localStorage first (fast, no API call)
+  const hasToken = !!localStorage.getItem('auth_token')
+  const authenticated = isAuthenticated || !!token || hasToken
+  
+  // Show loading only briefly, then redirect if not authenticated
+  if (isLoading && hasToken) {
+    // Show minimal loading (don't block)
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+      </div>
+    )
+  }
+  
+  if (!authenticated) {
+    return <Navigate to="/login" replace />
+  }
+  
+  return children
 }
 
 function App() {
@@ -56,6 +76,8 @@ function App() {
               <Route path="settings" element={<Settings />} />
               <Route path="plant-comparison" element={<PlantComparison />} />
               <Route path="weekly-recommendations" element={<WeeklyRecommendations />} />
+              <Route path="achievements" element={<Achievements />} />
+              <Route path="chatbot" element={<Chatbot />} />
             </Route>
           </Routes>
         </Router>

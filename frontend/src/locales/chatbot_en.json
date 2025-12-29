@@ -1,0 +1,23 @@
+{
+  "chatbot": {
+    "title": "AI Agricultural Assistant",
+    "subtitle": "Smart Farming Helper",
+    "placeholder": "Ask about watering, fertilizers, diseases...",
+    "send": "Send",
+    "sending": "Sending...",
+    "welcome": "🌱 Hello! I'm your smart farming assistant. I can help with watering, fertilizers, diseases, pests, and soil. Ask me anything!",
+    "error": "Sorry, an error occurred. Please try again.",
+    "clearHistory": "Clear History",
+    "history": "Conversation History",
+    "noHistory": "No conversation history",
+    "topics": {
+      "watering": "Watering & Water",
+      "fertilizer": "Fertilizers",
+      "diseases": "Diseases",
+      "pests": "Pests",
+      "soil": "Soil",
+      "general": "General"
+    }
+  }
+}
+

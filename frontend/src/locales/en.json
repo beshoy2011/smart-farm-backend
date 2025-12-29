@@ -7,7 +7,9 @@
       "smartWaterOptimization": "Smart Water Optimization",
       "soilHealthDetection": "Soil Health Detection",
       "fertilizerPestDiagnosis": "Fertilizer & Pest Diagnosis",
-      "dashboard": "SmartFarm Dashboard"
+      "dashboard": "SmartFarm Dashboard",
+      "achievements": "Achievements",
+      "chatbot": "AI Assistant"
     },
     "profile": {
       "myProfile": "My Profile",
@@ -280,7 +282,79 @@
     "logout": "Logout",
     "currency": " EGP",
     "liters": " L",
-    "kg": " kg"
+    "kg": " kg",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view": "View",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "chatbot": {
+    "title": "AI Agricultural Assistant",
+    "subtitle": "Smart Farming Helper",
+    "placeholder": "Ask about watering, fertilizers, diseases...",
+    "send": "Send",
+    "sending": "Sending...",
+    "welcome": "🌱 Hello! I'm your smart farming assistant. I can help with watering, fertilizers, diseases, pests, and soil. Ask me anything!",
+    "error": "Sorry, an error occurred. Please try again.",
+    "clearHistory": "Clear History",
+    "history": "Conversation History",
+    "noHistory": "No conversation history"
+  },
+  "features": {
+    "timelapse": {
+      "title": "Growth Tracking",
+      "createProject": "Create Project",
+      "addImage": "Add Image",
+      "viewProgress": "View Progress",
+      "generateVideo": "Generate Video"
+    },
+    "irrigation": {
+      "title": "Smart Irrigation",
+      "checkNeeds": "Check Needs",
+      "schedule": "Schedule",
+      "history": "History",
+      "stats": "Statistics"
+    },
+    "analytics": {
+      "title": "Advanced Analytics",
+      "comprehensive": "Comprehensive Stats",
+      "comparison": "Comparison",
+      "predictions": "Predictions"
+    },
+    "tasks": {
+      "title": "Agricultural Tasks",
+      "create": "Create Task",
+      "list": "Task List",
+      "today": "Today's Tasks",
+      "overdue": "Overdue"
+    }
+  },
+  "achievements": {
+    "title": "Achievements & Badges",
+    "subtitle": "Track your achievements and badges in SmartFarm AI",
+    "unlocked": "Unlocked Achievements",
+    "total": "Total",
+    "progress": "Progress",
+    "checkNew": "Check New Achievements",
+    "allAchievements": "All Achievements",
+    "noAchievements": "No achievements yet",
+    "noAchievementsDesc": "Start analyzing your plants to unlock achievements!",
+    "congratulations": "Congratulations! New Achievement",
+    "newAchievement": "Congratulations! You unlocked {count} new achievement(s)!",
+    "unlockedAt": "Unlocked at"
   }
 }
 
